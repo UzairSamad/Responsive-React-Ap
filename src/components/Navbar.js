@@ -20,14 +20,19 @@ class Navigation extends Component {
     }
 
     navigationItemsData = [
-        { id: '0', name: 'Home' },
-        { id: '1', name: 'About' },
-        { id: '2', name: 'ContactUs' },
+        { id: '0', name: 'Home', icon:'fa fa-home fa-lg' ,route:'/home'},
+        { id: '1', name: 'About' ,icon:'fa fa-info fa-lg' ,route:'/about'},
+        { id: '3', name: 'Contact Us',icon:'fa fa-address fa-lg' ,route:'/contactUs' },
+        { id: '3', name: 'Menu',icon:'fa fa-list fa-lg' ,route:'/menu' }
     ]
 
     navigationItems =
         this.navigationItemsData.map((val, index) => {
-            return <li style={{ marginRight: '20px', listStyle: 'none', color: 'white', paddingTop: '5px', cursor: 'pointer' }} key={val.id}> {val.name} </li>
+            return (
+                <NavItem key={val.id}>
+                    <NavLink className="nav-link" to={val.route}><span className={val.icon}></span> {val.name} </NavLink>
+                </NavItem>
+            )
         })
 
     render() {
@@ -41,18 +46,7 @@ class Navigation extends Component {
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to='/menu'><span className="fa fa-list fa-lg"></span> Menu</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
-                                </NavItem>
+                                {this.navigationItems}
                             </Nav>
                         </Collapse>
                     </div>
