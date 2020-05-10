@@ -38,7 +38,6 @@ class DishDetail extends Component {
 
     }
     renderDish(dish) {
-        console.log(this.props)
 
         if (dish != null)
             return (
