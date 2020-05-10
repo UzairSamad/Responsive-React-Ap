@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Menu from './Menu'
 import Header from './Header'
 import Footer from './Footer'
+import Navbar from './Navbar'
 import DishDetailed from './DishDetailed'
 
 import { DISHES } from '../shared/dishes';
@@ -23,6 +24,7 @@ class Main extends Component {
     render() {
         return (
             <div>
+                <Navbar />
                 <Header />
                 <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
                 {this.state.selectedDish != null &&

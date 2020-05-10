@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {  Jumbotron } from 'reactstrap';
-import Navbar from './Navbar'
 class Header extends Component {
   render() {
     return(
     <React.Fragment>
-     <Navbar />
-      <Jumbotron>
+      <Jumbotron style={{background:'#9575CD',padding:'70px 30px 70px 30px',margin:'0px auto',color:'floralwhite'}} >
            <div className="container">
                <div className="row row-header">
                    <div className="col-12 col-sm-6">
