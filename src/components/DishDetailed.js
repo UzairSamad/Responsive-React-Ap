@@ -16,7 +16,7 @@ class DishDetail extends Component {
                                         return (
                                             <div>
                                                 <li  class="text-sm-left pb-2" > {val.comment} </li>
-                                                <li class="text-sm-left pb-3" paddi> --{val.author} </li>
+                                                <li class="text-sm-left pb-3" paddi> --{val.author } {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(val.date)))} </li>
                                             </div>
                                         )
                                     })
